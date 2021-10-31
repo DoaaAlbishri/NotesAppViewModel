@@ -22,5 +22,5 @@ abstract class NoteDatabase:RoomDatabase() {
             return instance as NoteDatabase;
         }
     }
-    abstract fun StudentDao():NoteDao;
+    abstract fun NoteDao():NoteDao;
 }

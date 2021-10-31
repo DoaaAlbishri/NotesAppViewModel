@@ -53,8 +53,8 @@ class MainActivity : AppCompatActivity() {
     //}
 
     fun save() {
-        var note = editText.text.toString()
-        myViewModel.addNote(note)
+        var noteText = editText.text.toString()
+        myViewModel.addNote(noteText)
         Toast.makeText(applicationContext, "data saved successfully! ", Toast.LENGTH_SHORT).show()
     }
 
