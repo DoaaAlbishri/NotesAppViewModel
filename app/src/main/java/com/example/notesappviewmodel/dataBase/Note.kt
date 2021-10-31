@@ -1,4 +1,4 @@
-package com.example.notesappviewmodel
+package com.example.notesappviewmodel.dataBase
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity

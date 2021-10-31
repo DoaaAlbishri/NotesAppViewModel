@@ -10,6 +10,10 @@ import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.notesappviewmodel.adapter.RecyclerViewAdapter
+import com.example.notesappviewmodel.dataBase.Note
+import com.example.notesappviewmodel.dataBase.NoteDatabase
+import com.example.notesappviewmodel.viewModel.MyViewModel
 
 class MainActivity : AppCompatActivity() {
     lateinit var editText: EditText

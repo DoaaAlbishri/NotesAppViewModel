@@ -1,4 +1,4 @@
-package com.example.notesappviewmodel
+package com.example.notesappviewmodel.dataBase
 
 import androidx.lifecycle.LiveData
 import androidx.room.*

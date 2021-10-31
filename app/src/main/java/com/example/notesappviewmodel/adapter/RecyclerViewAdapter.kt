@@ -1,12 +1,14 @@
-package com.example.notesappviewmodel
+package com.example.notesappviewmodel.adapter
 
 import android.content.Context
 import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.lifecycle.LiveData
 import androidx.recyclerview.widget.RecyclerView
+import com.example.notesappviewmodel.MainActivity
+import com.example.notesappviewmodel.dataBase.Note
+import com.example.notesappviewmodel.R
 import kotlinx.android.synthetic.main.item_row.view.*
 //, private val words: List<Note>
 class RecyclerViewAdapter(private val mainActivity: MainActivity) : RecyclerView.Adapter<RecyclerViewAdapter.ItemViewHolder>(){

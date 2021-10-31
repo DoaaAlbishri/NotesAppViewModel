@@ -1,4 +1,4 @@
-package com.example.notesappviewmodel
+package com.example.notesappviewmodel.dataBase
 
 import android.content.Context
 import androidx.room.Database
@@ -11,16 +11,16 @@ import androidx.room.RoomDatabase
 abstract class NoteDatabase:RoomDatabase() {
 
     companion object{
-        var instance:NoteDatabase?=null;
-        fun getInstance(ctx: Context):NoteDatabase
+        var instance: NoteDatabase?=null;
+        fun getInstance(ctx: Context): NoteDatabase
         {
-            if(instance!=null)
+            if(instance !=null)
             {
                 return  instance as NoteDatabase;
             }
-            instance= Room.databaseBuilder(ctx,NoteDatabase::class.java,"details").run { allowMainThreadQueries() }.build();
+            instance = Room.databaseBuilder(ctx, NoteDatabase::class.java,"details").run { allowMainThreadQueries() }.build();
             return instance as NoteDatabase;
         }
     }
-    abstract fun NoteDao():NoteDao;
+    abstract fun NoteDao(): NoteDao;
 }

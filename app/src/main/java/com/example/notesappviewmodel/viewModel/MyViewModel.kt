@@ -1,8 +1,11 @@
-package com.example.notesappviewmodel
+package com.example.notesappviewmodel.viewModel
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
+import com.example.notesappviewmodel.dataBase.Note
+import com.example.notesappviewmodel.dataBase.NoteDatabase
+import com.example.notesappviewmodel.dataBase.NoteRepository
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -13,7 +16,7 @@ class MyViewModel (applicationContext : Application): AndroidViewModel(applicati
     private val repository: NoteRepository
 
     init {
-        //notes = NoteDatabase.getInstance(applicationContext).StudentDao().getNote()
+        //notes = NoteDatabase.getInstance(applicationContext).NoteDao().getNote()
         val noteDao = NoteDatabase.getInstance(applicationContext).NoteDao()
         repository = NoteRepository(noteDao)
         notes = repository.getNotes
