@@ -30,8 +30,9 @@ class RecyclerViewAdapter(private val mainActivity: MainActivity) : RecyclerView
         val word=words[position]
 
         holder.itemView.apply {
-            tv.text = word.note
+            //color
             if(position%2==0){llItem.setBackgroundColor(Color.GRAY)}
+            tv.text = word.note
             editBtn.setOnClickListener {
                 mainActivity.update(word.ID)
             }

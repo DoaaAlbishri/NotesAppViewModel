@@ -11,16 +11,11 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 class MyViewModel (applicationContext : Application): AndroidViewModel(applicationContext)  {
-    private val notes: LiveData<List<Note>>
+    val noteDao = NoteDatabase.getInstance(applicationContext).NoteDao()
+    private val repository: NoteRepository = NoteRepository(noteDao)
+    private val notes: LiveData<List<Note>> = repository.getNotes
+    //notes = NoteDatabase.getInstance(applicationContext).NoteDao().getNote()
     //val applicationContext = applicationContext
-    private val repository: NoteRepository
-
-    init {
-        //notes = NoteDatabase.getInstance(applicationContext).NoteDao().getNote()
-        val noteDao = NoteDatabase.getInstance(applicationContext).NoteDao()
-        repository = NoteRepository(noteDao)
-        notes = repository.getNotes
-    }
 
     fun getNotes(): LiveData<List<Note>>{
         return notes
